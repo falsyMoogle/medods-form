@@ -3,12 +3,12 @@
 		<h2 class="form-title">Создание клиента</h2>
 
 		<div class="form__input">
-			<label for="lastName">Фамилия</label>
+			<label for="lastName">Фамилия*</label>
 			<input type="text" id="lastName" v-model.trim="lastName" />
 		</div>
 
 		<div class="form__input">
-			<label for="firstname">Имя</label>
+			<label for="firstname">Имя*</label>
 			<input type="text" id="firstName" v-model.trim="firstName" />
 		</div>
 
@@ -18,12 +18,12 @@
 		</div>
 
 		<div class="form__input">
-			<label for="birthDate">Дата рождения</label>
+			<label for="birthDate">Дата рождения*</label>
 			<input type="date" id="birthDate" v-model="birthDate" />
 		</div>
 
 		<div class="form__input">
-			<label for="phoneNumber">Номер телефона</label>
+			<label for="phoneNumber">Номер телефона*</label>
 			<input type="tel" id="phoneNumber" v-model.trim="phoneNumber" />
 		</div>
 
@@ -37,7 +37,7 @@
 		</div>
 
 		<div class="form__input form__input--large">
-			<label for="clientGroup">Группа клиентов</label>
+			<label for="clientGroup">Группа клиентов*</label>
 			<select id="clientGroup" v-model="clientGroup" multiple>
 				<option disabled value>Выберите один или несколько вариантов</option>
 				<option>VIP</option>
@@ -60,6 +60,68 @@
 			<label for="SmsSending">Не отправлять смс</label>
 			<input type="checkbox" id="SmsSending" v-model="SmsSending" />
 		</div>
+
+		<!-- adress -->
+		<div class="form__input">
+			<label for="index">Индекс</label>
+			<input type="text" id="index" v-model.trim="index" />
+		</div>
+
+		<div class="form__input">
+			<label for="country">Страна</label>
+			<input type="text" id="country" v-model.trim="country" />
+		</div>
+
+		<div class="form__input">
+			<label for="area">Область</label>
+			<input type="text" id="area" v-model.trim="area" />
+		</div>
+
+		<div class="form__input">
+			<label for="city">Город*</label>
+			<input type="text" id="city" v-model.trim="city" />
+		</div>
+
+		<div class="form__input">
+			<label for="street">Улица</label>
+			<input type="text" id="street" v-model.trim="street" />
+		</div>
+
+		<div class="form__input">
+			<label for="house">Дом</label>
+			<input type="text" id="house" v-model.trim="house" />
+		</div>
+
+		<!-- passport -->
+		<div class="form__input">
+			<label for="document">Тип документа*</label>
+			<select id="document" v-model="document">
+				<option disabled value>Выберите один из вариантов</option>
+				<option>Паспорт</option>
+				<option>Свидетельство о рождении</option>
+				<option>Вод. удостоверение</option>
+			</select>
+		</div>
+
+		<div class="form__input">
+			<label for="serialNumber">Серия</label>
+			<input type="text" id="serialNumber" v-model.trim="serialNumber" />
+		</div>
+
+		<div class="form__input">
+			<label for="documentNumber">Номер</label>
+			<input type="text" id="documentNumber" v-model.trim="documentNumber" />
+		</div>
+
+		<div class="form__input">
+			<label for="issuedBy">Кем выдан</label>
+			<input type="text" id="issuedBy" v-model.trim="issuedBy" />
+		</div>
+
+		<div class="form__input">
+			<label for="dateOfIssue">Дата Выдачи*</label>
+			<input type="date" id="dateOfIssue" v-model.trim="dateOfIssue" />
+		</div>
 	</form>
 </template>
 
@@ -77,12 +139,23 @@ export default {
 			clientGroup: [],
 			doctor: "",
 			SmsSending: true,
+			index: "",
+			country: "",
+			area: "",
+			city: "",
+			street: "",
+			house: "",
+			document: "",
+			serialNumber: "",
+			documentNumber: "",
+			issuedBy: "",
+			dateOfIssue: "",
 		};
 	},
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	@import "../styles/variables";
 
 	.form {
